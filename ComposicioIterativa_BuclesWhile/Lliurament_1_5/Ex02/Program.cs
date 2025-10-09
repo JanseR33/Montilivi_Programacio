@@ -7,7 +7,6 @@
             const string NOM_FITXER = "Numeros.txt";
 
             int numElementsEntrats = 0;
-            int elementActual = 0;
             StreamReader fitxerNumeros;
             string linia;
 
@@ -17,13 +16,14 @@
             linia = fitxerNumeros.ReadLine();
             numElementsEntrats++;
 
-            while (elementActual != null)
+            while (linia != null)
             {
                 linia = fitxerNumeros.ReadLine();
                 numElementsEntrats++;
             }
 
-            Console.WriteLine($"El total de números entrats ha estat de {numElementsEntrats}");
+            fitxerNumeros.Close();
+            Console.WriteLine($"El fitxer {NOM_FITXER} té {numElementsEntrats} linies");
         }
     }
 }

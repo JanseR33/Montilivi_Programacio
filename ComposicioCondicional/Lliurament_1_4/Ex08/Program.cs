@@ -4,8 +4,14 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("");
+            Console.WriteLine("Introdueix una hora");
+            int hora = int.Parse(Console.ReadLine());
+
         }
-        }
+
+
+        /10000
+        /100  R%100
+        num % 100
     }
 }

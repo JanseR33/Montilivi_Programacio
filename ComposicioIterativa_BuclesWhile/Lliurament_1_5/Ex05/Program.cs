@@ -4,7 +4,20 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int nTotal = 0;
+            int suma = 0;
+
+            Console.WriteLine("Introdueix números i es farà la mitjana total. Escriu 0 quan vulguis aturar el programa.");
+
+            int n = int.Parse(Console.ReadLine());
+            nTotal++;
+
+            while (n != 0)
+            {
+                suma = suma + n;
+                nTotal++;
+                n = int.Parse(Console.ReadLine());
+            }
         }
     }
 }

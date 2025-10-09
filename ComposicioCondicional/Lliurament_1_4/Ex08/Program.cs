@@ -1,4 +1,6 @@
-﻿namespace Ex08
+﻿using System;
+
+namespace Ex08
 {
     internal class Program
     {
@@ -6,12 +8,41 @@
         {
             Console.WriteLine("Introdueix una hora");
             int hora = int.Parse(Console.ReadLine());
-
+            bool possible = HoraValida(hora);
+            if (possible == true)
+                Console.WriteLine($"L'hora entrada és possible");
+            else Console.WriteLine($"L'hora entrada no és possible");
         }
+        public static bool HoraValida(int hora)
+        {
+            int h = hora / 10000;
+            int m = (hora / 100) % 100;
+            int s = hora % 100;
 
+            bool hPossible = false;
+            bool mPossible = false;
+            bool sPossible = false;
 
-        /10000
-        /100  R%100
-        num % 100
+            if (h >= 0 && h <= 24)
+            {
+                hPossible = true;
+            }
+
+            if (m >= 0 && m <= 60)
+            {
+                mPossible = true;
+            }
+
+            if (s >= 0 && s <= 60)
+            {
+                sPossible = true;
+            }
+
+            if (hPossible == false || mPossible == false || sPossible == false)
+            {
+                return false;
+            }
+            else { return true; }
+        }
     }
 }

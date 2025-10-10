@@ -9,8 +9,8 @@
             Console.WriteLine("Introdueix la nota de l'examen");
             double notaExamen = double.Parse(Console.ReadLine());
 
-            string qualitat = NotaQualitativa(notaExamen, notaPractiques);
-            Console.WriteLine($"La nota qualitativa és: {qualitat}");
+            string notaFinal = NotaQualitativa(notaExamen, notaPractiques);
+            Console.WriteLine($"La nota qualitativa és: {notaFinal}");
         }
 
         public static string NotaQualitativa(double notaExamen, double notaPractiques)
@@ -18,26 +18,31 @@
             const double PERCENTATGE_EXAMEN = 0.8;
             const double PERCENTATGE_PRACTIQUES = 0.2;
 
+            string notaFinal;
+
             if (notaExamen < 3 || notaPractiques < 3)
             {
-                return "Suspens";
+                notaFinal = "Suspens";
             }
 
-            double notaFinalAssignatura =
-                (notaExamen * PERCENTATGE_EXAMEN) + (notaPractiques * PERCENTATGE_PRACTIQUES);
+            double notaFinalNum = (notaExamen * PERCENTATGE_EXAMEN) + (notaPractiques * PERCENTATGE_PRACTIQUES);
 
-            const double EPS = 1e-9;
-            if (Math.Abs(notaFinalAssignatura - 10.0) < EPS)
-                return "Matrícula d’honor";
+            if (notaFinalNum == 10)
+            {
+                notaFinal = "Matrícula d’honor";
+            }
 
-            if (notaFinalAssignatura < 5)
-                return "Suspens";
-            if (notaFinalAssignatura < 7)
-                return "Aprovat";
-            if (notaFinalAssignatura < 9)
-                return "Notable";
-
-            return "Excel·lent";
+            else if (notaFinalNum < 5 )
+                notaFinal = "Suspens";
+            else if (notaFinalNum < 7)
+                notaFinal = "Aprovat";
+            else if (notaFinalNum < 9)
+                notaFinal = "Notable";
+            else
+            {
+                notaFinal = "Excel·lent";
+            }
+                return notaFinal;
         }
     }
 }

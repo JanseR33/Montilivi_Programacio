@@ -18,17 +18,17 @@ namespace Ex05
             {
                 Console.WriteLine("Posa un número que sigui parell o senar");
             }
-            bool parellImparell = EsParell(numeroEntrat);
-            if (parellImparell)
+            bool esParell = EsParell(numeroEntrat);
+            if (esParell)
             {
-                Console.WriteLine("El número és imparell");
+                Console.WriteLine("El número és parell"); 
             }
             else
             {
-                Console.WriteLine("El número és parell");
+                Console.WriteLine("El número és imparell");
             }
-            bool multiple7 = Multiple7(numeroEntrat);
-            if (multiple7)
+            bool esMultipleDe7 = EsMultipleDe7(numeroEntrat);
+            if (esMultipleDe7)
             {
                 Console.WriteLine("El número és multiple de 7");
             }
@@ -58,7 +58,7 @@ namespace Ex05
         /// </summary>
         /// <param name="n">nombre entrat per l'usuari</param>
         /// <returns></returns>
-        public static bool Multiple7(int n)
+        public static bool EsMultipleDe7(int n)
         {
             bool multipleDe7 = false;
 

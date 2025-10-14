@@ -8,8 +8,8 @@ namespace Ex08
         {
             Console.WriteLine("Introdueix una hora");
             int hora = int.Parse(Console.ReadLine());
-            bool possible = HoraValida(hora);
-            if (possible == true)
+            bool esValida = HoraValida(hora);
+            if (esValida == true)
                 Console.WriteLine($"L'hora entrada és possible");
             else Console.WriteLine($"L'hora entrada no és possible");
         }
@@ -23,17 +23,17 @@ namespace Ex08
             bool mPossible = false;
             bool sPossible = false;
 
-            if (h >= 0 && h <= 24)
+            if (h >= 0 && h < 24)
             {
                 hPossible = true;
             }
 
-            if (m >= 0 && m <= 60)
+            if (m >= 0 && m < 60)
             {
                 mPossible = true;
             }
 
-            if (s >= 0 && s <= 60)
+            if (s >= 0 && s < 60)
             {
                 sPossible = true;
             }

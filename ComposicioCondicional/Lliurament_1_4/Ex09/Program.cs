@@ -2,6 +2,10 @@
 {
     internal class Program
     {
+        /// <summary>
+        /// Calculadora de notes de pràctiques i exàmens, amb resultat de l'evaluació
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.WriteLine("Introdueix la nota de les pràctiques");
@@ -13,6 +17,12 @@
             Console.WriteLine($"La nota qualitativa és: {notaFinal}");
         }
 
+        /// <summary>
+        /// Aqui es realitza el càlcul
+        /// </summary>
+        /// <param name="notaExamen">La nota de l'examen</param>
+        /// <param name="notaPractiques">La nota de les practiques</param>
+        /// <returns></returns>
         public static string NotaQualitativa(double notaExamen, double notaPractiques)
         {
             const double PERCENTATGE_EXAMEN = 0.8;

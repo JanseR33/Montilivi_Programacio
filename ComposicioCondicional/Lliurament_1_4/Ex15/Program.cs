@@ -2,22 +2,34 @@
 {
     internal class Program
     {
+        /// <summary>
+        /// Escriu un programa per tal de sumar un segon a una hora,minut i segon entrat per teclat.
+        /// El programa demanarà separadament les hores, minuts i segons i mostrarà tant l’hora entrada inicialment,
+        /// com l’hora incrementada en un segon. Cal mostrar en format hh:mm:ss.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.WriteLine("introdudix les hores");
-            int horesIntroduides = Convert.ToInt32(Console.ReadLine());
+            int horesIntroduides = int.Parse(Console.ReadLine());
 
             Console.WriteLine("introdueix els minuts");
-            int minutsIntroduits = Convert.ToInt32(Console.ReadLine());
+            int minutsIntroduits = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("introdueix els segons que li vulguem sumar");
-            int segonsIntroduits = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("introdueix els segons que desitgem sumar");
+            int segonsIntroduits = int.Parse(Console.ReadLine());
 
             string resultat = AfegirSegonsAMinutsIHores(horesIntroduides, minutsIntroduits, segonsIntroduits);
 
             Console.WriteLine(resultat);
         }
-
+        /// <summary>
+        /// En aquesta funció es fà el càlcul.
+        /// </summary>
+        /// <param name="horesIntroduides">Aquest és el valor de les hores introduïdes per l'usuari</param>
+        /// <param name="minutsIntroduits">Aquest és el valor de les minuts introduïts per l'usuari</param>
+        /// <param name="segonsIntroduits">Aquest és el valor de les segons introduïts per l'usuari</param>
+        /// <returns></returns>
         static string AfegirSegonsAMinutsIHores(int horesIntroduides, int minutsIntroduits, int segonsIntroduits)
         {
             int segonsSobrants;

@@ -3,20 +3,19 @@
     internal class Program
     {
         /// <summary>
-        /// Escriu un programa per tal de sumar un segon a una hora,minut i segon entrat per teclat.
-        /// El programa demanarà separadament les hores, minuts i segons i mostrarà tant l’hora entrada inicialment,
-        /// com l’hora incrementada en un segon. Cal mostrar en format hh:mm:ss.
+        /// Escriu un programa per tal de sumar un segon a una hora, minut i segon entrats per teclat.
+        /// Mostra l’hora inicial i l’hora incrementada en un segon en format hh:mm:ss.
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            Console.WriteLine("introdudix les hores");
+            Console.WriteLine("introdueix les hores (0-23)");
             int horesIntroduides = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("introdueix els minuts");
+            Console.WriteLine("introdueix els minuts (0-59)");
             int minutsIntroduits = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("introdueix els segons que desitgem sumar");
+            Console.WriteLine("introdueix els segons (0-59)");
             int segonsIntroduits = int.Parse(Console.ReadLine());
 
             string resultat = AfegirSegonsAMinutsIHores(horesIntroduides, minutsIntroduits, segonsIntroduits);
@@ -24,55 +23,49 @@
             Console.WriteLine(resultat);
         }
         /// <summary>
-        /// En aquesta funció es fà el càlcul.
+        /// En aquesta funció es fa el càlcul i el format hh:mm:ss.
         /// </summary>
         /// <param name="horesIntroduides">Aquest és el valor de les hores introduïdes per l'usuari</param>
-        /// <param name="minutsIntroduits">Aquest és el valor de les minuts introduïts per l'usuari</param>
-        /// <param name="segonsIntroduits">Aquest és el valor de les segons introduïts per l'usuari</param>
+        /// <param name="minutsIntroduits">Aquest és el valor dels minuts introduïts per l'usuari</param>
+        /// <param name="segonsIntroduits">Aquest és el valor dels segons introduïts per l'usuari</param>
         /// <returns></returns>
         static string AfegirSegonsAMinutsIHores(int horesIntroduides, int minutsIntroduits, int segonsIntroduits)
         {
-            int segonsSobrants;
-            int minutsSobrants;
-            string resultat;
-
-            if (horesIntroduides <= 24 && minutsIntroduits <= 59)
+            // Validació de rangs
+            if (horesIntroduides < 0 || horesIntroduides > 23 ||
+                minutsIntroduits < 0 || minutsIntroduits > 59 ||
+                segonsIntroduits < 0 || segonsIntroduits > 59)
             {
-                if (segonsIntroduits < 60)
-                {
-                    segonsSobrants = segonsIntroduits;
-                }
-                else
-                {
-                    minutsIntroduits += (minutsIntroduits + segonsIntroduits) / 60;
-                    segonsSobrants = segonsIntroduits % 60;
-                    Console.WriteLine(minutsIntroduits + " " + segonsSobrants);
-                }
-
-                if (minutsIntroduits > 60)
-                {
-                    minutsSobrants = minutsIntroduits;
-                }
-                else
-                {
-                    horesIntroduides += (horesIntroduides + minutsIntroduits) / 60;
-                    minutsSobrants = minutsIntroduits % 60;
-                    Console.WriteLine(horesIntroduides + " " + minutsSobrants);
-                }
-
-                if (horesIntroduides > 24)
-                {
-                    resultat = ($"t'has pasat de les 24: {horesIntroduides}:{minutsSobrants}:{segonsSobrants}");
-                }
-
-                resultat = ($"{horesIntroduides}:{minutsSobrants}:{segonsSobrants}");
-                return resultat;
+                return "Valors fora de rang (hores 0-23, minuts 0-59, segons 0-59)";
             }
-            else
+
+            // Mostra inicial en format hh:mm:ss
+            string inicial = $"{horesIntroduides:00}:{minutsIntroduits:00}:{segonsIntroduits:00}"; // padding amb :00 [web:21][web:23]
+
+            // Sumar 1 segon amb arrossegament manual
+            int h = horesIntroduides;
+            int m = minutsIntroduits;
+            int s = segonsIntroduits;
+
+            s += 1;
+            if (s == 60)
             {
-                resultat = ($"apren a posar una hora");
-                return resultat;
+                s = 0;
+                m += 1;
             }
+            if (m == 60)
+            {
+                m = 0;
+                h += 1;
+            }
+            if (h == 24)
+            {
+                h = 0;
+            }
+
+            string horaIncrementada = $"{h:00}:{m:00}:{s:00}";
+
+            return $"Inicial: {inicial}\n+1s:    {horaIncrementada}";
         }
     }
 }

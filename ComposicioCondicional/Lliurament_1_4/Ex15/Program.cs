@@ -65,7 +65,7 @@
 
             string horaIncrementada = $"{h:00}:{m:00}:{s:00}";
 
-            return $"Inicial: {inicial}\n+1s:    {horaIncrementada}";
+            return $"Inicial: {inicial}\n+1s: {horaIncrementada}";
         }
     }
 }

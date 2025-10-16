@@ -29,10 +29,10 @@
         static public bool EsCapICua(int n)
         {
             int primerNum = n / 1000;
-            int tercerNum = n % 10;
+            int quartNum = n % 10;
             bool esCapICua = false;
 
-            if (primerNum == tercerNum)
+            if (primerNum == quartNum)
             {
                 esCapICua = true;
             }

@@ -14,7 +14,7 @@
             Console.WriteLine("Escriu un any i et diré si és de traspàs.");
             any = Convert.ToInt32(Console.ReadLine());
 
-            resultat = Trespas(any);
+            resultat = Traspas(any);
 
             if (resultat == true)
             {
@@ -30,7 +30,7 @@
         /// </summary>
         /// <param name="any">any entrat per l'user</param>
         /// <returns></returns>
-        public static bool Trespas(int any)
+        public static bool Traspas(int any)
         {
             bool trespas = false;
 

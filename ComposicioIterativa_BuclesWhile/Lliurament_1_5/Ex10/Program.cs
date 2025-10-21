@@ -15,17 +15,18 @@
             int quantitat6 = 0;
             int quantitatD6Llançats = 0;
             Console.WriteLine("Aquest programa llença un dau de 6 cares i diu quants cops ha caigut en 1 i quants en 6.");
-            int d6;
+            int dau;
 
             while (!((quantitat1 != quantitat6) && (quantitat1 != 0) && (quantitat6 != 0)))
             {
                 quantitatD6Llançats++;
-                d6 = Random.Shared.Next(1, 7);
-                if (d6 == 1)
+                dau = Random.Shared.Next(1, 7);
+                Console.WriteLine($"{dau}");
+                if (dau == 1)
                 {
                     quantitat1++;
                 }
-                else if (d6 == 6)
+                else if (dau == 6)
                 {
                     quantitat6++;
                 }

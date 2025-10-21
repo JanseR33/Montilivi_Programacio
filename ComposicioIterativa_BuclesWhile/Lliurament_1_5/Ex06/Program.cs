@@ -22,8 +22,8 @@
                 numElementsEntrats++;
                 linia = fitxerNumeros.ReadLine();
             }
-            int resultat = suma / numElementsEntrats;
-
+            double resultat = suma / (double)numElementsEntrats;
+            fitxerNumeros.Close();
             Console.WriteLine($"La mitja dels números dins del fitxer {NOM_FITXER} és de: {resultat}");
         }
     }

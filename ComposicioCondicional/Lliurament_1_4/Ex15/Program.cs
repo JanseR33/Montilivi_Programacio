@@ -31,7 +31,6 @@
         /// <returns></returns>
         static string AfegirSegonsAMinutsIHores(int horesIntroduides, int minutsIntroduits, int segonsIntroduits)
         {
-            // Validació de rangs
             if (horesIntroduides < 0 || horesIntroduides > 23 ||
                 minutsIntroduits < 0 || minutsIntroduits > 59 ||
                 segonsIntroduits < 0 || segonsIntroduits > 59)
@@ -39,10 +38,8 @@
                 return "Valors fora de rang (hores 0-23, minuts 0-59, segons 0-59)";
             }
 
-            // Mostra inicial en format hh:mm:ss
-            string inicial = $"{horesIntroduides:00}:{minutsIntroduits:00}:{segonsIntroduits:00}"; // padding amb :00 [web:21][web:23]
+            string inicial = $"{horesIntroduides:00}:{minutsIntroduits:00}:{segonsIntroduits:00}";
 
-            // Sumar 1 segon amb arrossegament manual
             int h = horesIntroduides;
             int m = minutsIntroduits;
             int s = segonsIntroduits;

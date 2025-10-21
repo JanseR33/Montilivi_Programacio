@@ -32,6 +32,8 @@
                 nom = fitxerNom.ReadLine();
             }
 
+            fitxerNom.Close();
+
             if (copsAlex > copsIker)
             {
                 Console.WriteLine($"Hi ha més alumnes que és diuen Alex que Iker {copsAlex} a {copsIker}.");

@@ -39,7 +39,7 @@
 
                     strLinia = fitxerNumeros.ReadLine();
                 }
-
+                fitxerNumeros.Close();
                 Console.WriteLine($"De tots els nombres entrats, el més petit és {numPetit} i el més gran és {numGran}.");
             }
 

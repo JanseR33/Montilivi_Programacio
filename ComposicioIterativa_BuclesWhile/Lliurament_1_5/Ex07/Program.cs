@@ -14,25 +14,25 @@ namespace Ex07
             int numGran;
 
             Console.WriteLine("Introdueix un número");
-            int n = int.Parse(Console.ReadLine());
+            int numActual = int.Parse(Console.ReadLine());
 
-            numGran = n;
-            numPetit = n;
+            numGran = numActual;
+            numPetit = numActual;
 
-            while (n != 0)
+            while (numActual != 0)
             {
-                if (n > numGran)
+                if (numActual > numGran)
                 {
-                    numGran = n;
+                    numGran = numActual;
                 }
-                else if (n < numPetit)
+                else if (numActual < numPetit)
                 {
-                    numPetit = n;
+                    numPetit = numActual;
                 }
 
-                n = int.Parse(Console.ReadLine());
+                numActual = int.Parse(Console.ReadLine());
             }
-
+            
             Console.WriteLine($"De tots els nombres entrats, el més petit és {numPetit} i el més gran és {numGran}.");
         }
     }

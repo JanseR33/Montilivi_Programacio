@@ -9,11 +9,11 @@
 
             Console.WriteLine("Introdueix Números i et dirè quants n'has posat de positius i quants de negatius." +
                 " S'aturarà quan escriguis 0");
-            int n = int.Parse(Console.ReadLine());
+            int numActual = int.Parse(Console.ReadLine());
             
-            while (n != 0)
+            while (numActual != 0)
             {
-                if (n > 0)
+                if (numActual > 0)
                 {
                     valPositiu++;
                 }
@@ -22,7 +22,7 @@
                     valNegatiu++;
                 }
 
-                n = int.Parse(Console.ReadLine());
+                numActual = int.Parse(Console.ReadLine());
             }
 
             Console.WriteLine($"El total de números positius entrats ha estat {valPositiu}, mentre que el negatiu han estat de {valNegatiu}");

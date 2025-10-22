@@ -70,5 +70,5 @@ namespace Ex05
 
             return multipleDe7;
         }
-        }
     }
+}

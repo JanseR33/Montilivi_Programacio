@@ -12,7 +12,8 @@
 
             fitxerNom = new StreamReader(NOM_FITXER);
 
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Hello, World!"); 
+            
         }
     }
 }

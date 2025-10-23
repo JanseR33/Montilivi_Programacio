@@ -17,7 +17,9 @@
             Console.WriteLine("Aquest programa llença un dau de 6 cares i diu quants cops ha caigut en 1 i quants en 6.");
             int dau;
 
-            while (!((quantitat1 != quantitat6) && (quantitat1 != 0) && (quantitat6 != 0)))
+            //while (!((quantitat1 == quantitat6) && (quantitat1 != 0) && (quantitat6 != 0)))
+            while ((quantitat1!=quantitat6)&&
+                (quantitat1!=0 ||quantitat6!=0))
             {
                 quantitatD6Llançats++;
                 dau = Random.Shared.Next(1, 7);

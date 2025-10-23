@@ -13,15 +13,17 @@
             int num1;
             int num2;
             int iteracions = 0;
-
-            while (esCorrecte == false)
-            {
-                num1 = Random.Shared.Next(1, 101);
-                num2 = Random.Shared.Next(1, 101);
-                bool sumaCorrecte = false;
+     bool sumaCorrecte = false;
                 bool restaCorrecte = false;
                 bool producteCorrecte = false;
                 bool divisioCorrecte = false;
+
+
+            while (esCorrece t== false)
+            {
+                num1 = Random.Shared.Next(1, 101);
+                num2 = Random.Shared.Next(1, 101);
+           
 
                 Console.WriteLine($"Els nombres que han sortit són {num1} i {num2}.");
 

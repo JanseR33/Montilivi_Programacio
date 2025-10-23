@@ -4,15 +4,28 @@
     {
         static void Main(string[] args)
         {
-            const string NOM_FITXER = "alumnesDAMDAW.txt";
+            const string NOM_FITXER = "bonus.txt";
+            int import;
+            int ticketBonus = 0;
+            int ticketNoBonus = 0;
+            StreamReader fitxerBonus;
+            fitxerBonus = new StreamReader(NOM_FITXER);
 
-            StreamReader fitxerNom;
-            int copsIker = 0;
-            int copsAlex = 0;
+            string bonusActual = fitxerBonus.ReadLine();
 
-            fitxerNom = new StreamReader(NOM_FITXER);
+            while (bonusActual != null)
+            {
+                if (bonusActual == "BONUS")
+                {
+                    import = Random.Shared.Next(1, 11);
+                    ticketBonus++;
+                }
+                else
+                {
+                    ticketNoBonus++;
+                }
 
-            Console.WriteLine("Hello, World!"); 
+            }
             
         }
     }

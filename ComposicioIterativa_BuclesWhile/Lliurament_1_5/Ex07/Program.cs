@@ -32,7 +32,6 @@ namespace Ex07
 
                 numActual = int.Parse(Console.ReadLine());
             }
-            
             Console.WriteLine($"De tots els nombres entrats, el més petit és {numPetit} i el més gran és {numGran}.");
         }
     }

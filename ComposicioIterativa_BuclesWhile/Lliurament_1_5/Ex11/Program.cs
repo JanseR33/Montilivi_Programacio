@@ -19,7 +19,7 @@
                 bool divisioCorrecte = false;
 
 
-            while (esCorrece t== false)
+            while (sumaCorrecte && restaCorrecte && producteCorrecte && divisioCorrecte == false)
             {
                 num1 = Random.Shared.Next(1, 101);
                 num2 = Random.Shared.Next(1, 101);
@@ -82,16 +82,11 @@
 
                 iteracions++;
 
-                if (sumaCorrecte && restaCorrecte && producteCorrecte && divisioCorrecte)
-                {
-                    esCorrecte = true;
-                }
-                else
+                if (!(sumaCorrecte && restaCorrecte && producteCorrecte && divisioCorrecte))
                 {
                     Console.WriteLine("Has de repetir tot el procés!");
-                }
+                }   
             }
-
             Console.WriteLine($"Has necessitat {iteracions} iteracions per encertar les 4 operacions.");
         }
 

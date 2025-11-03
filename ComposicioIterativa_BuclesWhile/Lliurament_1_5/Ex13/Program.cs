@@ -2,6 +2,10 @@
 {
     internal class Program
     {
+        /// <summary>
+        /// Aquest programa mira el txt bonus.txt i diu si la linea es bonus o no. Després calcula un valor per l'etiqueta.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;

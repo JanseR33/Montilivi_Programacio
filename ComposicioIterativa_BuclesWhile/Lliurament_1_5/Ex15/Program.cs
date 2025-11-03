@@ -2,6 +2,10 @@
 {
     internal class Program
     {
+        /// <summary>
+        /// Aquest programa mira els partits de fútbol d'un arxiu i et diu els resultats del partit
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             StreamReader partitsLliga = new StreamReader("Girona lliga23_24_v2.txt");
@@ -16,7 +20,7 @@
 
             if (linea != null)
             {
-                golRival = Convert.ToInt32(linea);
+                golRival = int.Parse(linea);
                 linea = partitsLliga.ReadLine();
             }
 
@@ -24,7 +28,7 @@
             {
                 if (linea != null)
                 {
-                    golGir = Convert.ToInt32(linea);
+                    golGir = int.Parse(linea);
 
                     if (golGir > golRival)
                     {
@@ -43,7 +47,7 @@
 
                 if (linea != null)
                 {
-                    golRival = Convert.ToInt32(linea);
+                    golRival = int.Parse(linea);
                     linea = partitsLliga.ReadLine();
                 }
             }

@@ -2,6 +2,10 @@
 {
     internal class Program
     {
+        /// <summary>
+        /// Mira si son bonus o no i posa el preu que hi ha just a sota de la línea en cas que ho sigui
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;

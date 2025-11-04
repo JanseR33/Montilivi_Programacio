@@ -19,7 +19,7 @@
                 bool divisioCorrecte = false;
 
 
-            while (sumaCorrecte && restaCorrecte && producteCorrecte && divisioCorrecte == false)
+            while (!(sumaCorrecte && restaCorrecte && producteCorrecte && divisioCorrecte ))
             {
                 num1 = Random.Shared.Next(1, 101);
                 num2 = Random.Shared.Next(1, 101);

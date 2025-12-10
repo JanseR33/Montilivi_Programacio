@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="GeoLib/GeoLib.csproj" />
+  <Project Path="GeoLibTest1/GeoLibTest1.csproj" />
+  <Project Path="MultiplesApp/MultiplesApp.csproj" />
+  <Project Path="MultiplesAppTest/MultiplesAppTest.csproj" />
+</Solution>
